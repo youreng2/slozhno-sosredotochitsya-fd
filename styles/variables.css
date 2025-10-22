@@ -7,6 +7,10 @@
   --page-background-image: url(../images/cover-image-dark.png);
   --main-font: 'IBM Plex mono', sans-serif;
   --page-font-size: 16px;
+  --decorative-text-inset: 10px 19px auto auto;
+  --decorated-zone-inset: 10px 10px;
+  --header-inline-padding: 0 10px;
+  --main-inline-padding: 40px 10px;
   --title-color: #db00ff;
   --main-text-color: #f1b2ce;
   --accent-color: #ff0070;
