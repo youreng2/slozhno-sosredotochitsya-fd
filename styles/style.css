@@ -2,4 +2,203 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--page-background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--background-color);
+  font-family: var(--main-font);
+  font-size: var(--page-font-size);
+}
+
+/* header */
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(238px, 1fr) minmax(247px, 1fr) 1fr;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: 0 10px;
+}
+
+.decorative-text {
+  position: absolute;
+  inset: 10px 19px auto auto;
+  color: var(--accent-color);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.decorative-text::after {
+  content: '';
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: var(--accent-color);
+  box-shadow: var(--accent-color) 0 0 4px 2px;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  display: block;
+  inset: auto auto 10px 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: solid 1px var(--accent-color);
+  border-left: solid 1px var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  display: block;
+  inset: 10px 10px auto auto;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: solid 1px var(--accent-color);
+  border-right: solid 1px var(--accent-color);
+}
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+  margin-top: 10px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  inline-size: 4.375rem;
+  block-size: 1.625rem;
+  padding: 1.5px 13px;
+  border: none;
+  text-transform: lowercase;
+  font-size: 1.125rem;
+  line-height: 1em;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button_active {
+  outline: solid 1px var(--accent-color);
+}
+
+.header__title {
+  color: var(--title-color);
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__subtitle {
+  align-self: start;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* секция main */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  inline-size: 100%;
+  block-size: min-content;
+  background-color: var(--background-color);
+  padding: 40px 10px;
+}
+
+.main__section {
+  display: grid;
+  gap: 20px;
+  font-size: 1.125em;
+  line-height: 1.3em;
+}
+
+.main__section_heading {
+  font-weight: bold;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--accent-color);
+}
+
+.main__card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main__card_heading {
+  font-size: inherit;
+  line-height: inherit;;
+}
+
+h4.main__card_heading {
+  font-weight: normal;
+}
+
+.main__card_text {
+  font-weight: normal;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--main-text-color);
+}
+
+.main__link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+.main__section_image-gallery {
+  gap: 10px;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: minmax(355px, 1fr);
+  grid-template-rows: 142px 355px 237px 355px 237px;
+  gap: 10px;
+}
+
+.image-gallery_image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+}
+
+/* футер */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  inline-size: 100%;
+  block-size: 100vh;
+  min-block-size: 668px;
+  background-color: var(--background-color);
+}
+
+.footer__title {
+  color: var(--title-color);
+  font-weight: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.title-decor {
+  block-size: min-content;
+  color: var(--background-color);
+  background-color: var(--accent-color);
 }
