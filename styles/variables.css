@@ -8,11 +8,17 @@
   --main-font: 'IBM Plex mono', sans-serif;
   --page-font-size: 16px;
   --decorative-text-inset: 10px 19px auto auto;
+  --decorative-text-display-value: initial;
   --decorated-zone-inset: 10px 10px;
   --header-inline-padding: 0 10px;
   --main-inline-padding: 40px 10px;
+  --decorated-zone-color: #ff0070;
+  --theme-menu-color: #ff0070;
+  --theme-menu-color-hover: rgba(255 0 112 / 40%);
   --title-color: #db00ff;
+  --main-section-heading: #ff0070;
   --main-text-color: #f1b2ce;
   --accent-color: #ff0070;
+  --title-decor-text-color: #000028;
   --background-color: #000028;
 }

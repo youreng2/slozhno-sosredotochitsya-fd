@@ -2,13 +2,13 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--main-font);
+  font-size: var(--page-font-size);
+  background-color: var(--background-color);
   background-image: var(--page-background-image);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: var(--background-color);
-  font-family: var(--main-font);
-  font-size: var(--page-font-size);
 }
 
 /* header */
@@ -18,14 +18,15 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(238px, 1fr) minmax(247px, 1fr) 1fr;
+  padding: var(--header-inline-padding);
   block-size: 100vh;
   min-block-size: 668px;
-  padding: var(--header-inline-padding);
 }
 
 .decorative-text {
   position: absolute;
   inset: var(--decorative-text-inset) auto auto;
+  display: var(--decorative-text-display-value);
   color: var(--accent-color);
   font-size: 18px;
   text-transform: uppercase;
@@ -34,34 +35,34 @@
 .decorative-text::after {
   content: '';
   display: inline-block;
+  margin-left: 10px;
+  border-radius: 50%;
+  box-shadow: var(--accent-color) 0 0 4px 2px;
+  background-color: var(--accent-color);
   inline-size: 9px;
   block-size: 9px;
-  border-radius: 50%;
-  margin-left: 10px;
-  background-color: var(--accent-color);
-  box-shadow: var(--accent-color) 0 0 4px 2px;
 }
 
 .decorated-zone::before {
   content: '';
   position: absolute;
-  display: block;
   inset: auto auto var(--decorated-zone-inset);
+  display: block;
+  border-bottom: solid 1px var(--decorated-zone-color);
+  border-left: solid 1px var(--decorated-zone-color);
   inline-size: 25px;
   block-size: 25px;
-  border-bottom: solid 1px var(--accent-color);
-  border-left: solid 1px var(--accent-color);
 }
 
 .decorated-zone::after {
   content: '';
   position: absolute;
-  display: block;
   inset: var(--decorated-zone-inset) auto auto;
+  display: block;
+  border-top: solid 1px var(--decorated-zone-color);
+  border-right: solid 1px var(--decorated-zone-color);
   inline-size: 25px;
   block-size: 25px;
-  border-top: solid 1px var(--accent-color);
-  border-right: solid 1px var(--accent-color);
 }
 
 @media (width >= 768px) {
@@ -73,8 +74,8 @@
 }
 
 .header__theme-menu {
-  align-self: center;
   justify-self: end;
+  align-self: center;
   margin-top: 10px;
 }
 
@@ -85,20 +86,30 @@
 }
 
 .header__theme-menu-button {
+  border: solid 1px transparent;
+  padding: 1.5px 13px;
+  color: var(--theme-menu-color);
+  font-size: 1.125rem;
+  line-height: 1em;
+  text-transform: lowercase;
   background-color: transparent;
   inline-size: 4.375rem;
   block-size: 1.625rem;
-  padding: 1.5px 13px;
-  border: none;
-  text-transform: lowercase;
-  font-size: 1.125rem;
-  line-height: 1em;
-  color: var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: solid 1px var(--theme-menu-color-hover);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: solid 1px var(--theme-menu-color);
+  outline: none;
 }
 
 .header__theme-menu-button_active {
   box-sizing: border-box;
-  border: solid 1px var(--accent-color);
+  border: solid 1px var(--theme-menu-color);
+  pointer-events: none;
 }
 
 .header__title {
@@ -162,10 +173,10 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  padding: var(--main-inline-padding);
+  background-color: var(--background-color);
   inline-size: 100%;
   block-size: min-content;
-  background-color: var(--background-color);
-  padding: var(--main-inline-padding);
 }
 
 .main__section {
@@ -176,10 +187,10 @@
 }
 
 .main__section_heading {
+  color: var(--main-section-heading);
   font-weight: bold;
   font-size: inherit;
   line-height: inherit;
-  color: var(--accent-color);
 }
 
 .main__card {
@@ -204,15 +215,23 @@ h4.main__card_heading {
 }
 
 .main__card_text {
+  color: var(--main-text-color);
   font-weight: normal;
   font-size: inherit;
   line-height: inherit;
-  color: var(--main-text-color);
 }
 
 .main__link {
   text-decoration: none;
   text-shadow: 2px 2px var(--accent-color);
+}
+
+.main__link:hover {
+  border-bottom: solid 1px var(--main-text-color);
+}
+
+.main__link:focus-visible {
+  outline: solid 1px var(--main-text-color);
 }
 
 .main__section_image-gallery {
@@ -232,9 +251,9 @@ h4.main__card_heading {
 }
 
 .image-gallery_image {
+  object-fit: contain;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: contain;
 }
 
 @media (width >= 768px) {
@@ -267,13 +286,13 @@ h4.main__card_heading {
   }
 
   .image-gallery {
-    grid-column: 1 / -1;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: minmax(192px, max-content) minmax(230px, max-content) minmax(318px, max-content);
     grid-template-areas:
     "sunset sunset ice-cream"
     "tape books ice-cream"
     "tape street street";
+    grid-column: 1 / -1;
     gap: 20px;
   }
 
@@ -316,14 +335,14 @@ h4.main__card_heading {
 /* футер */
 
 .footer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  background-color: var(--background-color);
   inline-size: 100%;
   block-size: 100vh;
   min-block-size: 668px;
-  background-color: var(--background-color);
 }
 
 .footer__title {
@@ -335,9 +354,9 @@ h4.main__card_heading {
 }
 
 .title-decor {
-  block-size: min-content;
-  color: var(--background-color);
+  color: var(--title-decor-text-color);
   background-color: var(--accent-color);
+  block-size: min-content;
 }
 
 @media (width >= 1024px) {

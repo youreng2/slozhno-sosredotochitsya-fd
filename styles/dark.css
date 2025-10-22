@@ -9,4 +9,14 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --decorative-text-display-value: initial;
+  --decorated-zone-color: #ff0070;
+  --theme-menu-color: #ff0070;
+  --theme-menu-color-hover: rgba(255 0 112 / 40%);
+  --title-color: #db00ff;
+  --main-section-heading: #ff0070;
+  --main-text-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --title-decor-text-color: #000028;
+  --background-color: #000028;
 }
