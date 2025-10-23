@@ -5,9 +5,9 @@
 
 :root {
   --page-background-image: url(../images/cover-image-dark.png);
-  --main-font: 'IBM Plex mono', sans-serif;
+  --main-font: 'IBM Plex mono', monospace;
   --page-font-size: 16px;
-  --decorative-text-inset: 10px 19px auto auto;
+  --decorative-text-inset: 10px 19px;
   --decorative-text-display-value: initial;
   --decorated-zone-inset: 10px 10px;
   --header-inline-padding: 0 10px;

@@ -17,7 +17,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(238px, 1fr) minmax(247px, 1fr) 1fr;
+  grid-template-rows: minmax(35.6vh, 1fr) minmax(247px, 1fr) 1fr;
   padding: var(--header-inline-padding);
   block-size: 100vh;
   min-block-size: 668px;
@@ -174,7 +174,7 @@
   flex-direction: column;
   gap: 50px;
   padding: var(--main-inline-padding);
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   inline-size: 100%;
   block-size: min-content;
 }
@@ -227,7 +227,7 @@ h4.main__card_heading {
 }
 
 .main__link:hover {
-  border-bottom: solid 1px var(--main-text-color);
+  border-bottom: solid 1px currentColor;
 }
 
 .main__link:focus-visible {
@@ -339,7 +339,7 @@ h4.main__card_heading {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   inline-size: 100%;
   block-size: 100vh;
   min-block-size: 668px;
