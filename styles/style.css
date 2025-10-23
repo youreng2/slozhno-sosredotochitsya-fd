@@ -17,7 +17,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(35.6vh, 1fr) minmax(247px, 1fr) 1fr;
+  grid-template-rows: 1fr max-content 1fr;
   padding: var(--header-inline-padding);
   block-size: 100vh;
   min-block-size: 668px;
@@ -76,7 +76,7 @@
 .header__theme-menu {
   justify-self: end;
   align-self: center;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
 .header__theme-menu-list {
@@ -121,15 +121,15 @@
 }
 
 .header__subtitle {
-  align-self: start;
+  align-self: center;
+  margin-bottom: 10px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.125em;
 }
 
 @media (width >= 768px) {
   .header {
-    grid-template-columns: 1.5fr minmax(364px, 1fr);
-    grid-template-rows: minmax(463px, 1fr) minmax(261px, 1fr) 1.5fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .header__theme-menu,
@@ -138,20 +138,16 @@
   }
 
   .header__theme-menu {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .header__subtitle {
     grid-column: 2;
+    margin: 0 0 20px 10px;
   }
 }
 
 @media (width >= 1024px) {
-  .header {
-    grid-template-columns: 1.5fr minmax(491px, 1fr);
-    grid-template-rows: minmax(319px, 1fr) minmax(244px, 1fr) 1.5fr;
-  }
-
   .header__theme-menu {
     justify-self: center;
     align-self: self-start;
@@ -174,7 +170,6 @@
   flex-direction: column;
   gap: 50px;
   padding: var(--main-inline-padding);
-  /* background-color: var(--background-color); */
   inline-size: 100%;
   block-size: min-content;
 }
@@ -199,7 +194,7 @@
   gap: 10px;
 }
 
-.main__card-wrapper {
+.main__card-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -240,7 +235,7 @@ h4.main__card_heading {
 
 .image-gallery {
   display: grid;
-  grid-template-columns: minmax(355px, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: 
   minmax(142px, max-content)
   minmax(355px, max-content) 
@@ -266,10 +261,10 @@ h4.main__card_heading {
   }
 
   .main__section {
-    grid-template-columns: minmax(236px, 1fr) 2fr;
+    grid-template-columns: 1fr 2fr;
   }
 
-  .main__section-central .main__card-wrapper {
+  .main__section-unique-layout .main__card-list {
     grid-column: 1 / -1;
   }
 
@@ -287,7 +282,10 @@ h4.main__card_heading {
 
   .image-gallery {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: minmax(192px, max-content) minmax(230px, max-content) minmax(318px, max-content);
+    grid-template-rows:
+    minmax(192px, max-content)
+    minmax(230px, max-content)
+    minmax(318px, max-content);
     grid-template-areas:
     "sunset sunset ice-cream"
     "tape books ice-cream"
@@ -323,10 +321,10 @@ h4.main__card_heading {
 
 @media (width >= 1024px) {
   .main__section {
-    grid-template-columns: 1fr minmax(649px, 1fr);
+    grid-template-columns: 0.97fr 2fr;
   }
 
-  .main__section-central .main__card-wrapper {
+  .main__section-unique-layout .main__card-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -339,7 +337,6 @@ h4.main__card_heading {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: var(--background-color); */
   inline-size: 100%;
   block-size: 100vh;
   min-block-size: 668px;
