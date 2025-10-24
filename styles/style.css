@@ -188,6 +188,12 @@
   line-height: inherit;
 }
 
+.main__section_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .main__card {
   display: flex;
   flex-direction: column;
